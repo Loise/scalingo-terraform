@@ -58,6 +58,10 @@ jobs:
           rm -rf monoapp/.git
           tar -czvf monoapp.tar.gz --exclude='.git' -C monoapp .
           ls -la
+      - name: Setup SSH private key
+        uses: webfactory/ssh-agent@v0.9.0 # Use the latest stable version
+        with:
+          ssh-private-key: ${{ secrets.SCALINGO_SSH }}
       - name: push to git scalingo
         run: |
           cd monoapp
@@ -66,6 +70,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git remote add scalingo git@ssh.osc-fr1.scalingo.com:loisefenoll-test-01.git
+          git remote -v
           git add .
           git commit -m "test"
           git push scalingo master
