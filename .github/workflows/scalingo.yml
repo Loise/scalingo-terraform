@@ -64,7 +64,7 @@ jobs:
           git remote add scalingo git@ssh.osc-fr1.scalingo.com:loisefenoll-test-01.git
           git add .
           git commit -m "test"
-          git push scalingo main
+          git push scalingo master
 
       - uses: actions/upload-artifact@v4
         with:
