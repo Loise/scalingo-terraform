@@ -39,6 +39,11 @@ jobs:
         with:
           repository: Loise/ci-cd-ynov
           path: front
+      - name: Checkout Back node
+        uses: actions/checkout@v4
+        with:
+          repository: Loise/ci-cd-back-ynov
+          path: api-node
       - name: Créer l'archive
         run: |
           sudo chown -R $USER:$USER $GITHUB_WORKSPACE
