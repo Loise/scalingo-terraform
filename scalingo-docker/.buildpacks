@@ -1,2 +1,2 @@
-https://github.com/Scalingo/python-buildpack#subdirectory=api-python
-https://github.com/Scalingo/nodejs-buildpack#subdirectory=api-node
+https://github.com/Scalingo/nodejs-buildpack
+https://github.com/Scalingo/python-buildpack
