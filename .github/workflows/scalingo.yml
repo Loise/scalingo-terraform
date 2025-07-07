@@ -49,23 +49,26 @@ jobs:
           sudo chown -R $USER:$USER $GITHUB_WORKSPACE
           mkdir -p monoapp
           cp -r front monoapp/
+          rm -rf monoapp/front/.git
           cp -r server monoapp/api-python
           cp -r api-node monoapp/
+          rm -rf monoapp/api-node/.git
           cp scalingo-docker/Procfile monoapp/Procfile
           cp scalingo-docker/.buildpacks monoapp/.buildpacks
+          rm -rf monoapp/.git
           tar -czvf monoapp.tar.gz --exclude='.git' -C monoapp .
           ls -la
       - name: push to git scalingo
         run: |
           cd monoapp
           git init
-          git config --global init.defaultBranch main
+          git config --global init.defaultBranch master
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git remote add scalingo git@ssh.osc-fr1.scalingo.com:loisefenoll-test-01.git
           git add .
           git commit -m "test"
-          git push scalingo main
+          git push scalingo master
 
       - uses: actions/upload-artifact@v4
         with:
