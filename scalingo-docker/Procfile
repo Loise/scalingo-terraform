@@ -1,3 +1,3 @@
 web: npm start
-api-node: cd api-node && node ./api-node/server.js
-api-python: cd api-python && python ./api-python/app.py
+api-node: node ./api-node/server.js
+api-python: python ./api-python/app.py
