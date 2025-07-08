@@ -48,7 +48,7 @@ jobs:
         run: |
           sudo chown -R $USER:$USER $GITHUB_WORKSPACE
           mkdir -p monoapp
-          mv monoapp/server monoapp/api-python
+          mv ./server monoapp/api-python
           mv monoapp/api-python/Pipfile monoapp/Pipfile 
           cp -r front/. monoapp/
           rm -rf monoapp/.git
