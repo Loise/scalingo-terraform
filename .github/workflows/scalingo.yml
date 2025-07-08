@@ -48,10 +48,10 @@ jobs:
         run: |
           sudo chown -R $USER:$USER $GITHUB_WORKSPACE
           mkdir -p monoapp
-          cp -r front/. monoapp/
-          rm -rf monoapp/.git
           mv monoapp/server monoapp/api-python
           mv monoapp/api-python/Pipfile monoapp/Pipfile 
+          cp -r front/. monoapp/
+          rm -rf monoapp/.git
           cp -r api-node monoapp/
           rm -rf monoapp/api-node/.git
           cp scalingo-docker/Procfile monoapp/Procfile
