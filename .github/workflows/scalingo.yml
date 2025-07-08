@@ -50,7 +50,8 @@ jobs:
           mkdir -p monoapp
           cp -r front/. monoapp/
           rm -rf monoapp/.git
-          cp -r front/server monoapp/api-python
+          mv monoapp/server monoapp/api-python
+          mv monoapp/api-python/requirements.txt monoapp/requirements.txt 
           cp -r api-node monoapp/
           rm -rf monoapp/api-node/.git
           cp scalingo-docker/Procfile monoapp/Procfile
